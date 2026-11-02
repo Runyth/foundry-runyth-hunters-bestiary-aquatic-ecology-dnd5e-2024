@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 const DEFAULT_API_TIMEOUT_MS = 5000;
 const DEFAULT_POLL_INTERVAL_MS = 25;
 

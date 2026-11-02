@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 import { PROVIDER_ID, BASE_DND_ID, ECOLOGY_ID } from "./constants.mjs";
 import { buildActorData, buildHarvestItemData, normalizeDnd5eSize } from "./builder.mjs";
 import { validateStatblockPackage } from "./validation.mjs";
