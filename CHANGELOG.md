@@ -1,3 +1,9 @@
+## 1.3.6 — 2026-11-02
+
+### Fixed and improved
+
+- The licence-notices documentation now carries the adopted GNU AGPL-3.0-or-later statement next to the content-boundary text instead of the removed MIT stub. No runtime behaviour, relationship, or dependency change; the release moves a patch for the documentation-surface alignment.
+
 ## 1.3.5 — 2026-08-24
 
 - First publication as a Runyth module: `runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024` / **Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024** with the publication standard in place — deterministic `-mod`, `-src`, and `-doc` archives with per-version checksums, byte-identical rebuild verification, standard quality and release pipelines, the full GNU AGPL-3.0-or-later licence with the standard source notice, the standard README licence chapter, and the manifest URL surfaces.
