@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 import { CORE_ID, ECOLOGY_ID, MODULE_ID, SETTINGS } from "../constants.mjs";
 import { loadStatblockData } from "../data.mjs";
 import { validateStatblockPackage } from "../validation.mjs";

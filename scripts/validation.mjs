@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 function issue(code, path, message) { return { code, path, message, severity: "error" }; }
 function recordObject(value) { return Boolean(value) && typeof value === "object" && !Array.isArray(value); }
 function localizable(value) {

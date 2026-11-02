@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 const SKILL_MAP = { survival: "sur", nature: "nat", investigation: "inv", perception: "prc", animalHandling: "ani", medicine: "med", arcana: "arc" };
 export async function runNativeFieldCheck({ actor, skill, dc, flavor, rollMode }) {
   if (!actor?.isOwner && !game.user?.isGM) throw new Error("You do not own the selected Actor.");
