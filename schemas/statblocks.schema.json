@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Aquatic Ecology D&D 5e 2024 Stat Blocks",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "system",
+    "statblocks"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "system": {
+      "type": "object",
+      "required": [
+        "id",
+        "minimum",
+        "rules"
+      ],
+      "properties": {
+        "id": {
+          "const": "dnd5e"
+        },
+        "minimum": {
+          "const": "5.3.3"
+        },
+        "rules": {
+          "const": "2024"
+        }
+      }
+    },
+    "statblocks": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "rules",
+          "creatureType",
+          "size",
+          "ac",
+          "hp",
+          "hitDice",
+          "movement",
+          "respiration",
+          "abilities",
+          "cr",
+          "xp",
+          "traits",
+          "actions",
+          "harvestItems",
+          "encounter",
+          "managedKey"
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}

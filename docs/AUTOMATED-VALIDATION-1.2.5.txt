@@ -1,0 +1,8 @@
+hunters-bestiary-aquatic-ecology-dnd5e-2024 1.2.5 automated validation
+
+- npm test: 50/50 passed
+- npm run check: passed
+- English/German localization parity: 86/86
+- Production import resolution: passed
+- Deprecated Actor sense alias scan: passed where applicable
+- Explicit operation-result contract regression tests: passed

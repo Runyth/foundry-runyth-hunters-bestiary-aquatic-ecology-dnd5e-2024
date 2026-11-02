@@ -1,0 +1,27 @@
+<div class="hbae-dnd-dashboard hb-shared-dashboard">
+  <header class="hbae-dnd-toolbar">
+    <div><h1>{{localize "HBAEDND.Title"}}</h1><p>{{localize "HBAEDND.Subtitle"}}</p></div>
+    <label><span>{{localize "HBAEDND.Search"}}</span><input type="search" value="{{query}}" data-hbaednd-search aria-label="{{localize 'HBAEDND.Search'}}"></label>
+    {{#if isGM}}<div class="hbae-dnd-actions" aria-label="{{localize 'HBAEDND.Actions.Label'}}">
+      <button type="button" data-action="hbaedndImportActors"><i class="fa-solid fa-file-import"></i> {{localize "HBAEDND.ImportMissing"}}</button>
+      <button type="button" data-action="hbaedndUpdateActors"><i class="fa-solid fa-arrows-rotate"></i> {{localize "HBAEDND.UpdateImported"}}</button>
+      <button type="button" data-action="hbaedndImportHarvests"><i class="fa-solid fa-box"></i> {{localize "HBAEDND.ImportHarvests"}}</button>
+      <button type="button" data-action="hbaedndValidate"><i class="fa-solid fa-check-double"></i> {{localize "HBAEDND.Validate"}}</button>
+      <button type="button" data-action="hbaedndResetSize" title="{{localize 'HBAEDND.ResetSize'}}" aria-label="{{localize 'HBAEDND.ResetSize'}}"><i class="fa-solid fa-expand"></i></button>
+      <button type="button" data-action="hbaedndResetPosition" title="{{localize 'HBAEDND.ResetPosition'}}" aria-label="{{localize 'HBAEDND.ResetPosition'}}"><i class="fa-solid fa-crosshairs"></i></button>
+    </div>{{/if}}
+  </header>
+  <nav class="hbae-dnd-tabs" aria-label="{{localize 'HBAEDND.Navigation'}}">{{#each tabs}}<button type="button" data-hbaednd-tab="{{id}}" class="{{#if active}}is-active{{/if}}">{{label}}</button>{{/each}}</nav>
+
+  {{#if (eq activeTab "status")}}<section class="hbae-dnd-panel"><h2>{{localize "HBAEDND.Integration"}}</h2><dl><dt>{{localize "HBAEDND.System"}}</dt><dd>{{systemVersion}}</dd><dt>{{localize "HBAEDND.Statblocks"}}</dt><dd>{{records.length}}</dd><dt>{{localize "HBAEDND.Validation"}}</dt><dd>{{#if report.valid}}✓ {{localize "HBAEDND.Valid"}}{{else}}✗ {{localize "HBAEDND.Invalid"}}{{/if}}</dd></dl><div class="hbae-dnd-table"><table><thead><tr><th>{{localize "HBAEDND.Provider"}}</th><th>{{localize "HBAEDND.Statblocks"}}</th><th>{{localize "HBAEDND.Valid"}}</th><th>{{localize "HBAEDND.BaseRegistered"}}</th><th>{{localize "HBAEDND.Registered"}}</th></tr></thead><tbody>{{#each integrations}}<tr><td>{{providerId}}</td><td>{{statblocks}}</td><td>{{valid}}</td><td>{{baseRegistered}}</td><td>{{registeredAt}}</td></tr>{{else}}<tr><td colspan="5">{{localize "HBAEDND.NoResults"}}</td></tr>{{/each}}</tbody></table></div></section>{{/if}}
+
+  {{#if (eq activeTab "actors")}}<section class="hbae-dnd-panel hbae-dnd-grid">{{#each records}}<article data-hbaednd-record data-search-text="{{searchText}}"><div class="hbae-dnd-actor-heading">{{#if @root.isGM}}<button type="button" class="hbae-dnd-actor-image-button" data-action="hbaedndChangeImage" data-monster-id="{{id}}" title="{{localize 'HBAEDND.ChangeImage'}}"><img src="{{image}}" alt="{{displayName}}" loading="lazy"><span><i class="fa-solid fa-camera"></i></span></button>{{else}}<img class="hbae-dnd-actor-image" src="{{image}}" alt="{{displayName}}" loading="lazy">{{/if}}<h2>{{displayName}}</h2></div><p>CR {{cr}} · {{xp}} XP · PB +{{proficiencyBonus}}</p><dl><dt>{{localize "HBAEDND.Actor"}}</dt><dd>{{actorStatus}}</dd><dt>{{localize "HBAEDND.ArmorHealth"}}</dt><dd>{{ac}} / {{hp}} ({{hitDice}})</dd><dt>{{localize "HBAEDND.Movement"}}</dt><dd>{{movementText}}</dd><dt>{{localize "HBAEDND.Rules"}}</dt><dd>{{rules}}</dd></dl><h3>{{localize "HBAEDND.Actions.Title"}}</h3><ul>{{#each actions}}<li>{{displayName}} — {{damageFormula}} {{damageType}}</li>{{/each}}</ul></article>{{/each}}<p data-hbaednd-empty hidden>{{localize "HBAEDND.NoResults"}}</p></section>{{/if}}
+
+  {{#if (eq activeTab "harvests")}}<section class="hbae-dnd-panel hbae-dnd-grid">{{#each records}}<article data-hbaednd-record data-search-text="{{searchText}}"><h2>{{displayName}}</h2><p>{{harvestCount}} {{localize "HBAEDND.Items"}}</p><ul>{{#each harvestItems}}<li>{{displayName}} — {{valueGp}} gp, {{weight}} lb, {{rarity}}, {{localize "HBAEDND.SpoilsIn"}} {{spoilageHours}} h</li>{{/each}}</ul></article>{{/each}}<p data-hbaednd-empty hidden>{{localize "HBAEDND.NoResults"}}</p></section>{{/if}}
+
+  {{#if (eq activeTab "encounters")}}<section class="hbae-dnd-panel"><div class="hbae-dnd-table"><table><thead><tr><th>{{localize "HBAEDND.Species"}}</th><th>CR</th><th>{{localize "HBAEDND.Count"}}</th><th>{{localize "HBAEDND.Habitat"}}</th><th>{{localize "HBAEDND.Objective"}}</th><th>{{localize "HBAEDND.Noncombat"}}</th></tr></thead><tbody>{{#each records}}<tr data-hbaednd-record data-search-text="{{searchText}}"><td>{{displayName}}</td><td>{{encounter.cr}}</td><td>{{encounter.typicalCount}}</td><td>{{encounter.habitats}}</td><td>{{encounter.likelyObjective}}</td><td>{{encounter.noncombat}}</td></tr>{{/each}}</tbody></table></div><p data-hbaednd-empty hidden>{{localize "HBAEDND.NoResults"}}</p></section>{{/if}}
+
+  {{#if (eq activeTab "validation")}}<section class="hbae-dnd-panel"><p>{{#if report.valid}}✓{{else}}✗{{/if}} {{report.issues.length}} {{localize "HBAEDND.Issues"}}</p><pre>{{reportJson}}</pre></section>{{/if}}
+
+  {{#if isGM}}<section class="hbae-dnd-danger-zone"><h2>{{localize "HBAEDND.Delete.Title"}}</h2><p>{{localize "HBAEDND.Delete.ScopeSummary"}}</p><button type="button" class="hbae-dnd-danger" data-action="hbaedndDeleteImported"><i class="fa-solid fa-trash"></i> {{localize "HBAEDND.Delete.Button"}}</button></section>{{/if}}
+</div>

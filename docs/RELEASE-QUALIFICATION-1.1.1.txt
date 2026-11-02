@@ -1,0 +1,31 @@
+Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.1.1
+Release qualification date: 2026-07-31
+
+Static validation groups: passed
+Automated tests: 28 passed, 0 failed
+Production JavaScript modules syntax-checked: 11
+English/German localization keys: 60/60
+D&D stat blocks: 12
+Actions: 27
+Harvest Items: 36
+Native D&D 5e size-key conversion: 12/12 passed
+Prototype-token size mapping: 12/12 passed
+Clean-world Actor import simulation: 12 imported, 0 failed
+Reported partial-state recovery simulation: 2 skipped, 10 imported, 0 duplicates
+Progress DialogV2 non-empty button requirement: passed
+Import terminology audit: passed
+Exact provenance deletion selection: passed
+Unrelated Actor/Item/provider preservation test: passed
+Pre-existing and non-empty folder preservation test: passed
+GM-only destructive API test: passed
+Hook-scope and global-listener audit: passed
+CSS isolation audit: passed
+Manifest and production import resolution: passed
+Runtime-only install archive boundary: passed
+Source archive completeness: passed
+Archive root and decompression integrity: passed
+Repeated deterministic build: byte-identical
+Source ZIP rebuild to install ZIP: byte-identical
+SHA-256 generation: passed
+
+Live Foundry VTT 13.351 / D&D 5e 5.3.3 execution was not available in the build environment and is not claimed.

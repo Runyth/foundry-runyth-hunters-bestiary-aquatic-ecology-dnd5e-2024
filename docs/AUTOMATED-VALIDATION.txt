@@ -1,0 +1,420 @@
+# Automated Validation 1.3.5
+
+## npm test
+
+```text
+
+> hunters-bestiary-aquatic-ecology-dnd5e-2024@1.3.5 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: Aquatic D&D ApplicationV2 position contains only width and height
+ok 1 - Aquatic D&D ApplicationV2 position contains only width and height
+  ---
+  duration_ms: 1.137636
+  type: 'test'
+  ...
+# Subtest: module settings use standard Foundry localization keys
+ok 2 - module settings use standard Foundry localization keys
+  ---
+  duration_ms: 0.451859
+  type: 'test'
+  ...
+# Subtest: standard manifest localization replaces custom translation injection
+ok 3 - standard manifest localization replaces custom translation injection
+  ---
+  duration_ms: 0.974431
+  type: 'test'
+  ...
+# Subtest: settings registration is idempotent, verifiable, and independent of eager dashboard imports
+ok 4 - settings registration is idempotent, verifiable, and independent of eager dashboard imports
+  ---
+  duration_ms: 0.344604
+  type: 'test'
+  ...
+# Subtest: aquatic D&D dashboard foregrounding waits for rendering
+ok 5 - aquatic D&D dashboard foregrounding waits for rendering
+  ---
+  duration_ms: 0.193071
+  type: 'test'
+  ...
+# Subtest: all twelve stat blocks validate against matching ecology
+ok 6 - all twelve stat blocks validate against matching ecology
+  ---
+  duration_ms: 2.155793
+  type: 'test'
+  ...
+# Subtest: validation reports null ecology entries instead of dereferencing them
+ok 7 - validation reports null ecology entries instead of dereferencing them
+  ---
+  duration_ms: 1.340078
+  type: 'test'
+  ...
+# Subtest: validation reports null stat-block entries instead of dereferencing them
+ok 8 - validation reports null stat-block entries instead of dereferencing them
+  ---
+  duration_ms: 0.817058
+  type: 'test'
+  ...
+# Subtest: every Actor uses the 2024 marker and hostile unlinked token
+ok 9 - every Actor uses the 2024 marker and hostile unlinked token
+  ---
+  duration_ms: 2.373404
+  type: 'test'
+  ...
+# Subtest: Actor builder converts ecology size names to D&D 5e 5.3.3 size keys and token dimensions
+ok 10 - Actor builder converts ecology size names to D&D 5e 5.3.3 size keys and token dimensions
+  ---
+  duration_ms: 0.580189
+  type: 'test'
+  ...
+# Subtest: Import missing Actors creates all twelve records under the D&D 5e pre-create size contract
+ok 11 - Import missing Actors creates all twelve records under the D&D 5e pre-create size contract
+  ---
+  duration_ms: 2.683749
+  type: 'test'
+  ...
+# Subtest: Import missing Actors resumes safely after the two-Actor partial state
+ok 12 - Import missing Actors resumes safely after the two-Actor partial state
+  ---
+  duration_ms: 2.271931
+  type: 'test'
+  ...
+# Subtest: Actor import continues after an individual failure and reports every result
+ok 13 - Actor import continues after an individual failure and reports every result
+  ---
+  duration_ms: 1.094368
+  type: 'test'
+  ...
+# Subtest: movement and respiration are mechanically coherent
+ok 14 - movement and respiration are mechanically coherent
+  ---
+  duration_ms: 0.37906
+  type: 'test'
+  ...
+# Subtest: CR is absolute, varied, and encounter metadata agrees
+ok 15 - CR is absolute, varied, and encounter metadata agrees
+  ---
+  duration_ms: 1.052799
+  type: 'test'
+  ...
+# Subtest: Actions produce D&D 5.3 activity Items exactly once
+ok 16 - Actions produce D&D 5.3 activity Items exactly once
+  ---
+  duration_ms: 0.774849
+  type: 'test'
+  ...
+# Subtest: harvest builder creates priced nonmagical loot Items
+ok 17 - harvest builder creates priced nonmagical loot Items
+  ---
+  duration_ms: 0.875826
+  type: 'test'
+  ...
+# Subtest: managed content keys are globally unique
+ok 18 - managed content keys are globally unique
+  ---
+  duration_ms: 0.392999
+  type: 'test'
+  ...
+# Subtest: no bundled legendary actions or unsupported supernatural inflation
+ok 19 - no bundled legendary actions or unsupported supernatural inflation
+  ---
+  duration_ms: 0.744236
+  type: 'test'
+  ...
+# Subtest: each sign maps to a native field check instead of one universal skill
+ok 20 - each sign maps to a native field check instead of one universal skill
+  ---
+  duration_ms: 0.140232
+  type: 'test'
+  ...
+# Subtest: incomplete stat blocks fail with exact issue paths
+ok 21 - incomplete stat blocks fail with exact issue paths
+  ---
+  duration_ms: 0.605553
+  type: 'test'
+  ...
+# Subtest: all provider-managed embedded Items carry both provenance flag namespaces
+ok 22 - all provider-managed embedded Items carry both provenance flag namespaces
+  ---
+  duration_ms: 0.626528
+  type: 'test'
+  ...
+# Subtest: harvest data carries preservation, risk, law, and source species
+ok 23 - harvest data carries preservation, risk, law, and source species
+  ---
+  duration_ms: 1.268267
+  type: 'test'
+  ...
+# Subtest: managed Actor refresh preserves identity, folder, ownership, notes, unrelated flags, custom Items, and effects
+ok 24 - managed Actor refresh preserves identity, folder, ownership, notes, unrelated flags, custom Items, and effects
+  ---
+  duration_ms: 0.34932
+  type: 'test'
+  ...
+# Subtest: atomic monster-pack registration rolls back ecology when D&D registration fails
+ok 25 - atomic monster-pack registration rolls back ecology when D&D registration fails
+  ---
+  duration_ms: 0.432422
+  type: 'test'
+  ...
+# Subtest: D&D integration has no broad sheet, HUD, Scene Control, Chat, canvas, socket, or global keyboard hooks
+ok 26 - D&D integration has no broad sheet, HUD, Scene Control, Chat, canvas, socket, or global keyboard hooks
+  ---
+  duration_ms: 0.437384
+  type: 'test'
+  ...
+# Subtest: D&D manifest paths, exact dependencies, localization, and imports resolve
+ok 27 - D&D manifest paths, exact dependencies, localization, and imports resolve
+  ---
+  duration_ms: 2.826289
+  type: 'test'
+  ...
+# Subtest: D&D API protects provisioning, source builders, encounter profiles, and dashboard
+ok 28 - D&D API protects provisioning, source builders, encounter profiles, and dashboard
+  ---
+  duration_ms: 0.26772
+  type: 'test'
+  ...
+# Subtest: D&D CSS is isolated
+ok 29 - D&D CSS is isolated
+  ---
+  duration_ms: 0.286212
+  type: 'test'
+  ...
+# Subtest: base-registry compatibility records carry complete Actor, harvest, and encounter representations
+ok 30 - base-registry compatibility records carry complete Actor, harvest, and encounter representations
+  ---
+  duration_ms: 2.072462
+  type: 'test'
+  ...
+# Subtest: progress DialogV2 has a required button and no empty button configuration
+ok 31 - progress DialogV2 has a required button and no empty button configuration
+  ---
+  duration_ms: 0.294185
+  type: 'test'
+  ...
+# Subtest: dashboard uses Import terminology and exposes confirmed deletion
+ok 32 - dashboard uses Import terminology and exposes confirmed deletion
+  ---
+  duration_ms: 0.962052
+  type: 'test'
+  ...
+# Subtest: import provenance predicates reject unrelated and other-provider documents
+ok 33 - import provenance predicates reject unrelated and other-provider documents
+  ---
+  duration_ms: 2.509188
+  type: 'test'
+  ...
+# Subtest: deleteImportedData removes only exact imported documents and empty module-created folders
+ok 34 - deleteImportedData removes only exact imported documents and empty module-created folders
+  ---
+  duration_ms: 0.927076
+  type: 'test'
+  ...
+# Subtest: deleteImportedData retains failures while continuing other deletions
+ok 35 - deleteImportedData retains failures while continuing other deletions
+  ---
+  duration_ms: 0.467144
+  type: 'test'
+  ...
+# Subtest: public API includes import aliases and GM-only deletion
+ok 36 - public API includes import aliases and GM-only deletion
+  ---
+  duration_ms: 0.27126
+  type: 'test'
+  ...
+# Subtest: dashboard is resizable, saves final geometry, and filters search in place
+ok 37 - dashboard is resizable, saves final geometry, and filters search in place
+  ---
+  duration_ms: 0.371848
+  type: 'test'
+  ...
+# Subtest: official subject-system layer registers canonical metadata and uses shared dashboard validation
+ok 38 - official subject-system layer registers canonical metadata and uses shared dashboard validation
+  ---
+  duration_ms: 0.15922
+  type: 'test'
+  ...
+# Subtest: Aquatic D&D progress operations auto-close only clean success and retain failures
+ok 39 - Aquatic D&D progress operations auto-close only clean success and retain failures
+  ---
+  duration_ms: 0.125972
+  type: 'test'
+  ...
+# Subtest: provisioning and deletion continue while reporting per-document failures
+ok 40 - provisioning and deletion continue while reporting per-document failures
+  ---
+  duration_ms: 0.138757
+  type: 'test'
+  ...
+# Subtest: all aquatic stat blocks declare a packaged image
+ok 41 - all aquatic stat blocks declare a packaged image
+  ---
+  duration_ms: 4.572557
+  type: 'test'
+  ...
+# Subtest: Actor portrait and prototype token use the same record image
+ok 42 - Actor portrait and prototype token use the same record image
+  ---
+  duration_ms: 3.864161
+  type: 'test'
+  ...
+# Subtest: dashboard delegates image changes to Hunter's Bestiary core
+ok 43 - dashboard delegates image changes to Hunter's Bestiary core
+  ---
+  duration_ms: 1.464321
+  type: 'test'
+  ...
+# Subtest: Foundry manifest declares modular English and German dictionaries
+ok 44 - Foundry manifest declares modular English and German dictionaries
+  ---
+  duration_ms: 1.517814
+  type: 'test'
+  ...
+# Subtest: content localization delegates to the active Foundry i18n service
+ok 45 - content localization delegates to the active Foundry i18n service
+  ---
+  duration_ms: 0.372143
+  type: 'test'
+  ...
+# Subtest: every dashboard and source localization key resolves from each bundled dictionary
+ok 46 - every dashboard and source localization key resolves from each bundled dictionary
+  ---
+  duration_ms: 6.539437
+  type: 'test'
+  ...
+# Subtest: shipped stat-block content contains keys rather than embedded language maps
+ok 47 - shipped stat-block content contains keys rather than embedded language maps
+  ---
+  duration_ms: 6.072162
+  type: 'test'
+  ...
+# Subtest: concurrent stat-block data requests share one browser fetch
+ok 48 - concurrent stat-block data requests share one browser fetch
+  ---
+  duration_ms: 5.218569
+  type: 'test'
+  ...
+# Subtest: startup waits for independent dependencies concurrently
+ok 49 - startup waits for independent dependencies concurrently
+  ---
+  duration_ms: 3.460551
+  type: 'test'
+  ...
+# aquatic-provider-fallback | Base D&D registry registration failed; local import remains available. {
+#   providerId: 'aquatic-provider-fallback',
+#   rejected: [
+#     {
+#       providerId: 'aquatic-provider-fallback',
+#       recordId: 'brineback-raker',
+#       rule: 'forced-invalid',
+#       field: 'hp',
+#       message: 'forced rejection',
+#       rolledBack: false,
+#       localImportAvailable: true
+#     }
+#   ],
+#   rolledBack: false,
+#   localImportAvailable: true
+# }
+# Subtest: valid aquatic compatibility records register and all twelve are retrievable through the base registry
+ok 50 - valid aquatic compatibility records register and all twelve are retrievable through the base registry
+  ---
+  duration_ms: 34.021013
+  type: 'test'
+  ...
+# Subtest: base registration waits for asynchronous readiness and is idempotent
+ok 51 - base registration waits for asynchronous readiness and is idempotent
+  ---
+  duration_ms: 41.408627
+  type: 'test'
+  ...
+# Subtest: provider replacement removes stale aquatic records
+ok 52 - provider replacement removes stale aquatic records
+  ---
+  duration_ms: 14.261809
+  type: 'test'
+  ...
+# Subtest: genuine base rejection yields structured diagnostics while local import remains available
+ok 53 - genuine base rejection yields structured diagnostics while local import remains available
+  ---
+  duration_ms: 4.786656
+  type: 'test'
+  ...
+# Subtest: generated aquatic Actors use only the modern D&D sense range structure
+ok 54 - generated aquatic Actors use only the modern D&D sense range structure
+  ---
+  duration_ms: 0.83281
+  type: 'test'
+  ...
+# Subtest: production sources never access deprecated D&D Actor sense aliases
+ok 55 - production sources never access deprecated D&D Actor sense aliases
+  ---
+  duration_ms: 16.429946
+  type: 'test'
+  ...
+# Subtest: aquatic dashboard delegates failure detection to the shared explicit contract
+ok 56 - aquatic dashboard delegates failure detection to the shared explicit contract
+  ---
+  duration_ms: 2.016589
+  type: 'test'
+  ...
+# hunters-bestiary-aquatic-ecology-dnd5e-2024 | Ready with 12 D&D 5e 2024 stat blocks.
+# Subtest: all 12 packaged stat blocks validate and the companion reaches ready state
+ok 57 - all 12 packaged stat blocks validate and the companion reaches ready state
+  ---
+  duration_ms: 61.777274
+  type: 'test'
+  ...
+# Subtest: active dependencies may expose their readiness API after this module's ready hook begins
+ok 58 - active dependencies may expose their readiness API after this module's ready hook begins
+  ---
+  duration_ms: 0.692005
+  type: 'test'
+  ...
+# Subtest: dependency readiness is awaited concurrently and accepts late Aquatic Ecology completion
+ok 59 - dependency readiness is awaited concurrently and accepts late Aquatic Ecology completion
+  ---
+  duration_ms: 1.151938
+  type: 'test'
+  ...
+# Subtest: a dependency that genuinely completed startup with failures is still rejected
+ok 60 - a dependency that genuinely completed startup with failures is still rejected
+  ---
+  duration_ms: 0.530499
+  type: 'test'
+  ...
+# Subtest: startup no longer permanently rejects a transiently missing dependency API
+ok 61 - startup no longer permanently rejects a transiently missing dependency API
+  ---
+  duration_ms: 25.601028
+  type: 'test'
+  ...
+# Subtest: startup failures are kept outside the frozen public API
+ok 62 - startup failures are kept outside the frozen public API
+  ---
+  duration_ms: 0.597264
+  type: 'test'
+  ...
+1..62
+# tests 62
+# suites 0
+# pass 62
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 380.750201
+```
+
+## npm run check
+
+```text
+
+> hunters-bestiary-aquatic-ecology-dnd5e-2024@1.3.5 check
+> node tools/validate.mjs
+
+Aquatic D&D validation passed: 12 stat blocks, 27 actions, 36 harvest Items.
+Localization parity: 654 keys. Static scripts: 13.
+```

@@ -1,0 +1,3 @@
+# Mechanical Validation
+
+The validation checks all twelve ecology matches, 2024 markers, CR/XP encounter parity, varied CR, movement and respiration coherence, Actions, Traits, harvest fields, managed keys, and absence of unjustified legendary actions. CR values are static design estimates and must still be evaluated during live play, especially for underwater mobility, vessel terrain, and party access to water-breathing support.

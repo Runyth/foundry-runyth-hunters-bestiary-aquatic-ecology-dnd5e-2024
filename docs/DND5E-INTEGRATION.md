@@ -1,0 +1,3 @@
+# D&D 5e 2024 Integration
+
+Actors use type `npc`, `system.details.source.rules = "2024"`, hostile unlinked tokens, D&D 5.3 activity records, natural-weapon or save Activities, and complete provenance flags. Mechanics derive from recorded physiology: air breathers have Hold Breath logic, amphibious creatures have walk and swim speeds, the sessile Siltbell Colony is explicitly exempt from swim movement, and electroreception never becomes an electrical attack.
