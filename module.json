@@ -71,5 +71,11 @@
   "download": "https://github.com/Runyth/foundry-runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024/releases/download/v1.3.5/runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024-v1.3.5-mod.zip",
   "license": "LICENSE",
   "readme": "README.md",
-  "changelog": "CHANGELOG.md"
+  "changelog": "CHANGELOG.md",
+  "media": [
+    {
+      "type": "icon",
+      "url": "assets/runyth-hunters-bestiary-aquatic-ecology.svg"
+    }
+  ]
 }
