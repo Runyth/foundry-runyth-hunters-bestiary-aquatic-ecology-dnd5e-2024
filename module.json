@@ -2,7 +2,7 @@
   "id": "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024",
   "title": "Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024",
   "description": "D&D 5e 2024 Actors, actions, harvest Items, field checks, and encounter profiles for Aquatic Ecology.",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "compatibility": {
     "minimum": "13",
     "verified": "13.351",
@@ -68,7 +68,7 @@
   },
   "url": "https://github.com/Runyth/foundry-runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024",
   "manifest": "https://github.com/Runyth/foundry-runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024/releases/latest/download/module.json",
-  "download": "https://github.com/Runyth/foundry-runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024/releases/download/v1.3.5/runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024-v1.3.5-mod.zip",
+  "download": "https://github.com/Runyth/foundry-runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024/releases/download/v1.3.6/runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024-v1.3.6-mod.zip",
   "license": "LICENSE",
   "readme": "README.md",
   "changelog": "CHANGELOG.md",
