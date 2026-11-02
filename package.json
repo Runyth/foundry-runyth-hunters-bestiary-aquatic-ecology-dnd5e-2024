@@ -8,8 +8,9 @@
   },
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node tools/validate.mjs",
-    "build": "node tools/build.mjs"
+    "check": "node tools/check.mjs && npm test && npm run build && npm run verify:release",
+    "build": "node tools/build.mjs",
+    "verify:release": "node tools/verify-release.mjs"
   },
   "license": "AGPL-3.0-or-later"
 }
