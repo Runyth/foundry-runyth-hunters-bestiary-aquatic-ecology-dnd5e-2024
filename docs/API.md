@@ -1,6 +1,6 @@
-# Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 API
+# Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 API
 
-Release: 1.2.0. Public APIs are exposed through `game.modules.get("hunters-bestiary-aquatic-ecology-dnd5e-2024").api`; no new global namespace is required. Existing compatibility surfaces are retained for this feature release.
+Release: 1.2.0. Public APIs are exposed through `game.modules.get("runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024").api`; no new global namespace is required. Existing compatibility surfaces are retained for this feature release.
 
 ## Shared core dependency
 
@@ -16,7 +16,7 @@ After `await api.whenReady()`:
 - GM-only `buildActorData(monsterId)`, `buildHarvestItemData(monsterId)`, and `getEncounterProfile(monsterId)`.
 - `getIntegrationStatus(providerId)`, `open(options)`, and `getStatus()`.
 
-The module consumes `core.ui`, registers `type: "subject-system-layer"`, subject `Aquatic Ecology`, system `D&D 5e 2024`, and provider ID `hunters-bestiary-aquatic-ecology-dnd5e-2024`. Its combined ecology/D&D registration supports rollback.
+The module consumes `core.ui`, registers `type: "subject-system-layer"`, subject `Aquatic Ecology`, system `D&D 5e 2024`, and provider ID `runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024`. Its combined ecology/D&D registration supports rollback.
 
 ## Initialization, registration, and rollback
 

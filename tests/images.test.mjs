@@ -15,7 +15,7 @@ test("Actor portrait and prototype token use the same record image", async () =>
   assert.equal(actor.prototypeToken.texture.src, data.statblocks[0].img);
 });
 
-test("dashboard delegates image changes to Hunter's Bestiary core", async () => {
+test("dashboard delegates image changes to Runyth Hunter's Bestiary core", async () => {
   const source = await readFile(new URL("../scripts/apps/dashboard.mjs", import.meta.url), "utf8");
   const template = await readFile(new URL("../templates/dashboard.hbs", import.meta.url), "utf8");
   assert.match(source, /openMonsterImagePicker/);

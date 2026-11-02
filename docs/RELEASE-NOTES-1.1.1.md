@@ -1,4 +1,4 @@
-# Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.1.1
+# Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.1.1
 
 This patch fixes **Import missing Actors** stopping after two creatures in D&D 5e 5.3.3.
 

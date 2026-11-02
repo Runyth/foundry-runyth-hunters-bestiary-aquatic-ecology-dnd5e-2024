@@ -1,7 +1,7 @@
 ## 1.3.5 — 2026-08-24
 
 - Hardened stat-block package validation so null, primitive, malformed ecology, stat-block, trait, action, and harvest entries produce structured validation issues instead of throwing.
-- Fixed the cross-module malformed species input at its source by requiring Hunter's Bestiary: Aquatic Ecology 1.2.4, which now preserves a stable `{ id }` record when core knowledge filtering hides a species.
+- Fixed the cross-module malformed species input at its source by requiring Runyth Hunter's Bestiary: Aquatic Ecology 1.2.4, which now preserves a stable `{ id }` record when core knowledge filtering hides a species.
 - Added regression coverage for all 12 packaged stat blocks, null ecology entries, null stat-block entries, and full Foundry-ready startup with the 12-record provider.
 - No world-data migration is required.
 
@@ -60,7 +60,7 @@
 - Kept progress windows open and foregrounded whenever an operation throws or any individual document fails.
 - Added cumulative failure details and continued processing so the progress window lists all failed Actors, Items, or folders instead of only the first error.
 - Prevented success notifications and dashboard rerenders from obscuring a retained failure window.
-- Raised the Hunter's Bestiary dependency floor to 1.3.5 for the enhanced progress lifecycle.
+- Raised the Runyth Hunter's Bestiary dependency floor to 1.3.5 for the enhanced progress lifecycle.
 
 
 ## 1.2.3
@@ -71,7 +71,7 @@
 - Added complete dashboard-reference resolution tests for both English and German.
 - Made the defensive translation loader retryable after transient failures.
 - Required translations to be ready before context preparation and dashboard rendering.
-- Raised the Hunter's Bestiary dependency floor to 1.3.4.
+- Raised the Runyth Hunter's Bestiary dependency floor to 1.3.4.
 
 ## 1.2.2
 
@@ -88,7 +88,7 @@
 - Added defensive localized fallbacks for permission and geometry-reset notifications.
 - Added a guarded runtime translation-dictionary recovery path when Foundry has not loaded the module language file.
 - Removed a duplicated geometry-persistence initialization statement.
-- Updated dependencies to Hunter's Bestiary - D&D 5e 2024 1.1.2 and Aquatic Ecology 1.1.1.
+- Updated dependencies to Runyth Hunter's Bestiary - D&D 5e 2024 1.1.2 and Aquatic Ecology 1.1.1.
 - Added regression tests for valid ApplicationV2 options and human-readable settings text.
 
 ## 1.2.0 - 2026-07-31

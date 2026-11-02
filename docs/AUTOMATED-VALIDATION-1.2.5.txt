@@ -1,4 +1,4 @@
-hunters-bestiary-aquatic-ecology-dnd5e-2024 1.2.5 automated validation
+runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024 1.2.5 automated validation
 
 - npm test: 50/50 passed
 - npm run check: passed

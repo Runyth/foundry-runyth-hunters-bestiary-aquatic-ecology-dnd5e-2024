@@ -8,7 +8,7 @@
 
 ---
 
-# Manual Test Plan - Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.0
+# Manual Test Plan - Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.0
 
 
 1. Back up a disposable Foundry v13 world.

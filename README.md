@@ -1,12 +1,12 @@
-# Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024
+# Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024
 
 Current release: **1.3.5**.
 
 ## Required versions
 
-1. Hunter's Bestiary 1.4.2+
-2. Hunter's Bestiary - D&D 5e 2024 1.2.2+
-3. Hunter's Bestiary: Aquatic Ecology 1.2.4+
+1. Runyth Hunter's Bestiary 1.4.2+
+2. Runyth Hunter's Bestiary - D&D 5e 2024 1.2.2+
+3. Runyth Hunter's Bestiary: Aquatic Ecology 1.2.4+
 4. This module 1.3.5
 5. D&D Fifth Edition 5.3.3
 

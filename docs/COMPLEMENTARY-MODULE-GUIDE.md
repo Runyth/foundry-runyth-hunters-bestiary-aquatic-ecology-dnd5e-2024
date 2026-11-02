@@ -5,15 +5,15 @@ This focused guide explains this module's reference implementation and links con
 ## Canonical patterns
 
 ```text
-Hunter's Bestiary
-Hunter's Bestiary - <Game System>
-Hunter's Bestiary: <Complementary Subject>
-Hunter's Bestiary: <Complementary Subject> - <Game System>
+Runyth Hunter's Bestiary
+Runyth Hunter's Bestiary - <Game System>
+Runyth Hunter's Bestiary: <Complementary Subject>
+Runyth Hunter's Bestiary: <Complementary Subject> - <Game System>
 ```
 
 Punctuation is normative:
 
-- The family name is exactly `Hunter's Bestiary`, using the ASCII apostrophe.
+- The family name is exactly `Runyth Hunter's Bestiary`, using the ASCII apostrophe.
 - A subject is introduced by `: `.
 - A game-system designation is introduced by ` - `.
 - Subject comes before game system when both are present.
@@ -22,12 +22,12 @@ Punctuation is normative:
 ### Valid examples
 
 ```text
-Hunter's Bestiary
-Hunter's Bestiary - D&D 5e 2024
-Hunter's Bestiary: Aquatic Ecology
-Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024
-Hunter's Bestiary: Forest Ecology
-Hunter's Bestiary: Forest Ecology - Pathfinder Second Edition
+Runyth Hunter's Bestiary
+Runyth Hunter's Bestiary - D&D 5e 2024
+Runyth Hunter's Bestiary: Aquatic Ecology
+Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024
+Runyth Hunter's Bestiary: Forest Ecology
+Runyth Hunter's Bestiary: Forest Ecology - Pathfinder Second Edition
 ```
 
 ### Invalid examples
@@ -35,10 +35,10 @@ Hunter's Bestiary: Forest Ecology - Pathfinder Second Edition
 ```text
 Hunters Bestiary Aquatic Ecology
 Hunter Bestiary: Aquatic Ecology
-Hunter's Bestiary D&D5e Aquatic
-Aquatic Ecology for Hunter's Bestiary
-Hunter's Bestiary - Aquatic Ecology
-Hunter's Bestiary: D&D 5e 2024 - Aquatic Ecology
+Runyth Hunter's Bestiary D&D5e Aquatic
+Aquatic Ecology for Runyth Hunter's Bestiary
+Runyth Hunter's Bestiary - Aquatic Ecology
+Runyth Hunter's Bestiary: D&D 5e 2024 - Aquatic Ecology
 ```
 
 ## Complementary-module categories
@@ -87,14 +87,14 @@ const core = game.modules.get("hunters-bestiary")?.api;
 await core.whenReady();
 
 const metadata = {
-  moduleId: "hunters-bestiary-aquatic-ecology-dnd5e-2024",
-  currentTitle: game.modules.get("hunters-bestiary-aquatic-ecology-dnd5e-2024")?.title,
+  moduleId: "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024",
+  currentTitle: game.modules.get("runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024")?.title,
   subject: "Aquatic Ecology",
   gameSystem: "D&D 5e 2024",
   type: "subject-system-layer",
   dashboardApplicationId: "hbae-dnd-dashboard",
-  providerId: "hunters-bestiary-aquatic-ecology-dnd5e-2024",
-  version: game.modules.get("hunters-bestiary-aquatic-ecology-dnd5e-2024")?.version,
+  providerId: "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024",
+  version: game.modules.get("runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024")?.version,
   apiCompatibilityVersion: "1.0.0"
 };
 
@@ -108,7 +108,7 @@ A validation result is structured:
 {
   valid: false,
   actualName: "Aquatic Monsters for 5e",
-  expectedName: "Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024",
+  expectedName: "Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024",
   moduleId: "example-aquatic-module",
   metadata: { /* normalized metadata */ },
   problems: [

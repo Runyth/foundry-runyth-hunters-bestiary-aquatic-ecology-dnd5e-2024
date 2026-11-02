@@ -1,4 +1,4 @@
-# Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.3
+# Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.3
 
 This patch corrects the module-specific localization root cause. The defensive loader previously copied flat keys such as `HBAEDND.Title` directly into Foundry's nested active translation dictionary. Native Foundry loading expands those keys, but the manual fallback did not, so the complete dashboard could display internal identifiers.
 

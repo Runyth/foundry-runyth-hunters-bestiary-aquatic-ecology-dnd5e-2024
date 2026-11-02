@@ -1,4 +1,4 @@
-# Performance Audit — Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.3.2
+# Performance Audit — Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.3.2
 
 ## Scope
 

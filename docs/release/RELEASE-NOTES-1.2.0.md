@@ -1,4 +1,4 @@
-# Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.0 Release Notes
+# Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.0 Release Notes
 
 Released 2026-07-31. Feature release from 1.1.1 to 1.2.0.
 

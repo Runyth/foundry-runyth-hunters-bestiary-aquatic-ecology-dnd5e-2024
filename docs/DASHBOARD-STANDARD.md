@@ -1,4 +1,4 @@
-# Hunter's Bestiary Dashboard Standard
+# Runyth Hunter's Bestiary Dashboard Standard
 
 Dashboard API version: 1.0.0. The core module is authoritative; this module consumes the same public toolkit.
 
@@ -151,7 +151,7 @@ Do not add broad `button`, `input`, `.window-content`, or ApplicationV2 selector
 
 ## This module's application
 
-- Canonical title: **Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024**
+- Canonical title: **Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024**
 - Theme retained: Ocean-blue D&D integration palette
 - Shared infrastructure: geometry load/save/clamp/reset, stable search, progress, busy state, result reporting, destructive confirmation where applicable, and dashboard-open naming validation.
 

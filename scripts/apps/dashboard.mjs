@@ -12,7 +12,7 @@ const GEOMETRY_OPTIONS = Object.freeze({ moduleId: MODULE_ID, settingKey: SETTIN
 
 function toolkit() {
   const value = game.modules.get(CORE_ID)?.api?.ui;
-  if (!value) throw new Error("Hunter's Bestiary dashboard API 1.0.0 is unavailable.");
+  if (!value) throw new Error("Runyth Hunter's Bestiary dashboard API 1.0.0 is unavailable.");
   return value;
 }
 
@@ -32,7 +32,7 @@ export function progressDialogOptions(title) {
 
 export function operationHasFailures(value) {
   const detector = toolkit().operationHasFailures;
-  if (typeof detector !== "function") throw new Error("Hunter's Bestiary dashboard API 1.1.0 operation-result contract is unavailable.");
+  if (typeof detector !== "function") throw new Error("Runyth Hunter's Bestiary dashboard API 1.1.0 operation-result contract is unavailable.");
   return detector(value);
 }
 

@@ -2,7 +2,7 @@
 
 Use Foundry VTT 13.351 and D&D 5e 5.3.3.
 
-1. Enable Hunter's Bestiary 1.3.6, its D&D integration 1.1.7, Aquatic Ecology 1.1.5, and this module 1.2.5.
+1. Enable Runyth Hunter's Bestiary 1.3.6, its D&D integration 1.1.7, Aquatic Ecology 1.1.5, and this module 1.2.5.
 2. Reload and confirm no base-registry rejection warning.
 3. Confirm the provider exposes all twelve stat blocks through the base D&D API.
 4. Delete imported aquatic data.

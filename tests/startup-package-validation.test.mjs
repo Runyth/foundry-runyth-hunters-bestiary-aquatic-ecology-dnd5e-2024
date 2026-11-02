@@ -55,16 +55,16 @@ test("all 12 packaged stat blocks validate and the companion reaches ready state
     getStatus: () => ({ ready: true, ok: true, failures: [] }),
     getSpecies: async () => ecologyFixture.map(({ id }) => ({ id }))
   });
-  const target = { active: true, title: "Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024", version: "1.3.5", api: null };
+  const target = { active: true, title: "Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024", version: "1.3.5", api: null };
   globalThis.game = {
     system: { id: "dnd5e", version: "5.3.3" },
     user: { isGM: true },
     i18n: { lang: "en", localize: key => key },
     modules: new Map([
-      ["hunters-bestiary", { active: true, api: coreApi }],
-      ["hunters-bestiary-dnd5e-2024", { active: true, api: baseApi }],
-      ["hunters-bestiary-aquatic-ecology", { active: true, api: ecologyApi }],
-      ["hunters-bestiary-aquatic-ecology-dnd5e-2024", target]
+      ["runyth-hunters-bestiary", { active: true, api: coreApi }],
+      ["runyth-hunters-bestiary-dnd5e-2024", { active: true, api: baseApi }],
+      ["runyth-hunters-bestiary-aquatic-ecology", { active: true, api: ecologyApi }],
+      ["runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024", target]
     ]),
     settings: {
       settings,

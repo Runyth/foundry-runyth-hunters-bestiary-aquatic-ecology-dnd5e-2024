@@ -24,7 +24,7 @@ All Actors use `npc`, hostile unlinked prototype Tokens, `system.details.source.
 
 - Actor import selects existing Actors only when `managed`, `providerId`, `managedKey`, and `monsterId` all identify this module.
 - Harvest import selects world Items only when the same exact provider flags and a `harvestId` are present.
-- Deletion uses the same positive provenance predicates. It does not match names, folder names, document types alone, or broad Hunter's Bestiary flags.
+- Deletion uses the same positive provenance predicates. It does not match names, folder names, document types alone, or broad Runyth Hunter's Bestiary flags.
 - A folder is eligible only when this module created it with an exact `actor-import-folder` or `item-import-folder` marker, and it is empty at deletion time.
 - Existing folders reused by import are intentionally left unmarked and therefore cannot be deleted by this module.
 - Deleting an imported Actor deletes that Actor as a complete Foundry Document, including any embedded custom additions. This is disclosed in the confirmation and manual test plan. Update/import refresh remains non-destructive to unrelated embedded content.

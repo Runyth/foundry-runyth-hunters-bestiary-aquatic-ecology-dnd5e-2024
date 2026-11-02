@@ -150,7 +150,7 @@ export async function registerWithBase(providerId, statblocks) {
       variant: "compatibility-v1",
       count: 0,
       rolledBack: false,
-      issues: [{ providerId, recordId: "unknown", rule: "base-api-unavailable", message: "Hunter's Bestiary - D&D 5e 2024 registry API is unavailable.", rolledBack: false, localImportAvailable: true }]
+      issues: [{ providerId, recordId: "unknown", rule: "base-api-unavailable", message: "Runyth Hunter's Bestiary - D&D 5e 2024 registry API is unavailable.", rolledBack: false, localImportAvailable: true }]
     };
   }
 

@@ -34,7 +34,7 @@ function parseDamage(formula) {
 function itemFlags(record, kind) {
   return {
     [MODULE_ID]: { managed: true, providerId: PROVIDER_ID, managedKey: record.id, kind },
-    "hunters-bestiary": { managed: true, providerId: PROVIDER_ID, managedKey: record.id, monsterId: record.id.split("-").slice(0, -2).join("-") || record.id }
+    "runyth-hunters-bestiary": { managed: true, providerId: PROVIDER_ID, managedKey: record.id, monsterId: record.id.split("-").slice(0, -2).join("-") || record.id }
   };
 }
 function baseActivity(action, activityId) {
@@ -72,15 +72,15 @@ function buildActionItem(action, monsterId) {
   return {
     name: localizeContent(action.name), type: "feat", img: "icons/creatures/abilities/mouth-teeth-long-red.webp",
     system: { description: { value: `<p>${localizeContent(action.description)}</p>`, chat: "" }, source: { rules: "2024" }, type: { value: "monster", subtype: "" }, activities: { [activityId]: activity }, uses: { spent: 0, recovery: [], max: "" } },
-    flags: { [MODULE_ID]: { managed: true, providerId: PROVIDER_ID, managedKey: action.id, monsterId }, "hunters-bestiary": { managed: true, providerId: PROVIDER_ID, managedKey: action.id, monsterId } }
+    flags: { [MODULE_ID]: { managed: true, providerId: PROVIDER_ID, managedKey: action.id, monsterId }, "runyth-hunters-bestiary": { managed: true, providerId: PROVIDER_ID, managedKey: action.id, monsterId } }
   };
 }
 function buildTraitItem(trait, monsterId) {
-  return { name: localizeContent(trait.name), type: "feat", img: "icons/creatures/abilities/dragon-ice-breath-blue.webp", system: { description: { value: `<p>${localizeContent(trait.description)}</p>`, chat: "" }, source: { rules: "2024" }, type: { value: "monster", subtype: "" }, activities: {}, uses: { spent: 0, recovery: [], max: "" } }, flags: { [MODULE_ID]: { managed: true, providerId: PROVIDER_ID, managedKey: trait.id, monsterId }, "hunters-bestiary": { managed: true, providerId: PROVIDER_ID, managedKey: trait.id, monsterId } } };
+  return { name: localizeContent(trait.name), type: "feat", img: "icons/creatures/abilities/dragon-ice-breath-blue.webp", system: { description: { value: `<p>${localizeContent(trait.description)}</p>`, chat: "" }, source: { rules: "2024" }, type: { value: "monster", subtype: "" }, activities: {}, uses: { spent: 0, recovery: [], max: "" } }, flags: { [MODULE_ID]: { managed: true, providerId: PROVIDER_ID, managedKey: trait.id, monsterId }, "runyth-hunters-bestiary": { managed: true, providerId: PROVIDER_ID, managedKey: trait.id, monsterId } } };
 }
 function buildReactionItem(reaction, monsterId) {
   const activityId = safeId(`${reaction.id}act`);
-  return { name: localizeContent(reaction.name), type: "feat", img: "icons/skills/movement/arrow-upward-yellow.webp", system: { description: { value: `<p>${localizeContent(reaction.description)}</p>`, chat: "" }, source: { rules: "2024" }, type: { value: "monster", subtype: "" }, activities: { [activityId]: { ...baseActivity({ activation: "reaction", rangeFt: 0 }, activityId), type: "utility", activation: { type: "reaction", cost: 1, condition: localizeContent(reaction.description) }, roll: { prompt: false, visible: false, formula: "" } } }, uses: { spent: 0, recovery: [], max: "" } }, flags: { [MODULE_ID]: { managed: true, providerId: PROVIDER_ID, managedKey: reaction.id, monsterId }, "hunters-bestiary": { managed: true, providerId: PROVIDER_ID, managedKey: reaction.id, monsterId } } };
+  return { name: localizeContent(reaction.name), type: "feat", img: "icons/skills/movement/arrow-upward-yellow.webp", system: { description: { value: `<p>${localizeContent(reaction.description)}</p>`, chat: "" }, source: { rules: "2024" }, type: { value: "monster", subtype: "" }, activities: { [activityId]: { ...baseActivity({ activation: "reaction", rangeFt: 0 }, activityId), type: "utility", activation: { type: "reaction", cost: 1, condition: localizeContent(reaction.description) }, roll: { prompt: false, visible: false, formula: "" } } }, uses: { spent: 0, recovery: [], max: "" } }, flags: { [MODULE_ID]: { managed: true, providerId: PROVIDER_ID, managedKey: reaction.id, monsterId }, "runyth-hunters-bestiary": { managed: true, providerId: PROVIDER_ID, managedKey: reaction.id, monsterId } } };
 }
 function abilitySource(record, ability) {
   const proficient = Object.hasOwn(record.saves, ability) ? 1 : 0;
@@ -109,7 +109,7 @@ export function buildActorData(record) {
     system: {
       abilities: Object.fromEntries(["str","dex","con","int","wis","cha"].map((key) => [key, abilitySource(record, key)])),
       attributes: { ac: { calc: "flat", flat: record.ac, formula: "" }, hp: { value: record.hp, max: record.hp, temp: 0, tempmax: 0, formula: record.hitDice }, movement: { burrow: record.movement.burrow, climb: record.movement.climb, fly: record.movement.fly, swim: record.movement.swim, walk: record.movement.walk, units: "ft", hover: false }, senses, spellcasting: "", exhaustion: 0, hd: record.proficiencyBonus },
-      details: { alignment: record.alignment, biography: { value: "", public: "" }, cr: record.cr, type: { value: record.creatureType, subtype: "", swarm: "", custom: "" }, source: { book: "Hunter's Bestiary: Aquatic Ecology", page: "", license: "MIT", rules: "2024", revision: 1 }, xp: { value: record.xp } },
+      details: { alignment: record.alignment, biography: { value: "", public: "" }, cr: record.cr, type: { value: record.creatureType, subtype: "", swarm: "", custom: "" }, source: { book: "Runyth Hunter's Bestiary: Aquatic Ecology", page: "", license: "MIT", rules: "2024", revision: 1 }, xp: { value: record.xp } },
       traits: { size, languages: { value: record.languages, custom: "" }, di: { value: record.damageImmunities, bypasses: [], custom: "" }, dr: { value: record.damageResistances, bypasses: [], custom: "" }, dv: { value: [], bypasses: [], custom: "" }, ci: { value: record.conditionImmunities, custom: "" }, dm: { amount: {}, bypasses: [] }, important: false },
       skills: Object.fromEntries(["acr","ani","arc","ath","dec","his","ins","itm","inv","med","nat","prc","prf","per","rel","slt","ste","sur"].map((skill) => [skill, skillSource(record, skill)])),
       resources: { legact: { value: 0, max: 0 }, legres: { value: 0, max: 0 }, lair: { value: false, initiative: null, inside: false } }, currency: { pp: 0, gp: 0, ep: 0, sp: 0, cp: 0 }
@@ -117,7 +117,7 @@ export function buildActorData(record) {
     prototypeToken: { name: localizeContent(record.name), width: tokenSize, height: tokenSize, displayName: globalThis.CONST?.TOKEN_DISPLAY_MODES?.OWNER_HOVER ?? 20, displayBars: globalThis.CONST?.TOKEN_DISPLAY_MODES?.OWNER_HOVER ?? 20, disposition: globalThis.CONST?.TOKEN_DISPOSITIONS?.HOSTILE ?? -1, actorLink: false, bar1: { attribute: "attributes.hp" }, bar2: { attribute: null }, texture: { src: record.img ?? "modules/hunters-bestiary-aquatic-ecology/assets/aquatic-ecology.svg", scaleX: 1, scaleY: 1 }, sight: { enabled: true, range: 0, visionMode: "basic" } },
     ownership: { default: globalThis.CONST?.DOCUMENT_OWNERSHIP_LEVELS?.NONE ?? 0 },
     items,
-    flags: { [MODULE_ID]: { managed: true, providerId: PROVIDER_ID, managedKey: record.managedKey, monsterId: record.id, rules: "2024" }, "hunters-bestiary": { providerId: PROVIDER_ID, monsterId: record.id, managedKey: record.managedKey, rules: "2024" } }
+    flags: { [MODULE_ID]: { managed: true, providerId: PROVIDER_ID, managedKey: record.managedKey, monsterId: record.id, rules: "2024" }, "runyth-hunters-bestiary": { providerId: PROVIDER_ID, monsterId: record.id, managedKey: record.managedKey, rules: "2024" } }
   };
   return actor;
 }
@@ -125,9 +125,9 @@ export function buildActorData(record) {
 export function buildHarvestItemData(record, harvest) {
   if (!record || !harvest) throw new Error("Stat block and harvest record are required.");
   return {
-    name: localizeContent(harvest.name), type: "loot", img: "modules/hunters-bestiary-aquatic-ecology-dnd5e-2024/assets/aquatic-dnd5e.svg",
-    system: { description: { value: `<p>${localizeContent(harvest.description)}</p><p><strong>${localizeKey("HBAEDND.Fields.Preservation")}:</strong> ${localizeContent(harvest.preservation)}</p><p><strong>${localizeKey("HBAEDND.Fields.Conditions")}:</strong> ${localizeContent(harvest.conditions)}</p><p><strong>${localizeKey("HBAEDND.Fields.Risks")}:</strong> ${localizeContent(harvest.risks)}</p><p><strong>${localizeKey("HBAEDND.Fields.LegalStatus")}:</strong> ${localizeContent(harvest.legalStatus)}</p>`, chat: "" }, quantity: harvest.quantity, weight: harvest.weight, price: { value: harvest.valueGp, denomination: "gp" }, rarity: harvest.rarity, identified: true, type: { value: "tradeGood", subtype: "" }, properties: [], source: { book: "Hunter's Bestiary: Aquatic Ecology", page: "", license: "MIT", rules: "2024", revision: 1 } },
+    name: localizeContent(harvest.name), type: "loot", img: "modules/runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024/assets/runyth-hunters-bestiary-aquatic-ecology.svg",
+    system: { description: { value: `<p>${localizeContent(harvest.description)}</p><p><strong>${localizeKey("HBAEDND.Fields.Preservation")}:</strong> ${localizeContent(harvest.preservation)}</p><p><strong>${localizeKey("HBAEDND.Fields.Conditions")}:</strong> ${localizeContent(harvest.conditions)}</p><p><strong>${localizeKey("HBAEDND.Fields.Risks")}:</strong> ${localizeContent(harvest.risks)}</p><p><strong>${localizeKey("HBAEDND.Fields.LegalStatus")}:</strong> ${localizeContent(harvest.legalStatus)}</p>`, chat: "" }, quantity: harvest.quantity, weight: harvest.weight, price: { value: harvest.valueGp, denomination: "gp" }, rarity: harvest.rarity, identified: true, type: { value: "tradeGood", subtype: "" }, properties: [], source: { book: "Runyth Hunter's Bestiary: Aquatic Ecology", page: "", license: "MIT", rules: "2024", revision: 1 } },
     ownership: { default: globalThis.CONST?.DOCUMENT_OWNERSHIP_LEVELS?.NONE ?? 0 },
-    flags: { [MODULE_ID]: { managed: true, providerId: PROVIDER_ID, managedKey: `${record.id}:harvest:${harvest.id}`, monsterId: record.id, harvestId: harvest.id, spoilageHours: harvest.spoilageHours, requiresDeath: harvest.requiresDeath }, "hunters-bestiary": { managed: true, providerId: PROVIDER_ID, managedKey: `${record.id}:harvest:${harvest.id}`, monsterId: record.id } }
+    flags: { [MODULE_ID]: { managed: true, providerId: PROVIDER_ID, managedKey: `${record.id}:harvest:${harvest.id}`, monsterId: record.id, harvestId: harvest.id, spoilageHours: harvest.spoilageHours, requiresDeath: harvest.requiresDeath }, "runyth-hunters-bestiary": { managed: true, providerId: PROVIDER_ID, managedKey: `${record.id}:harvest:${harvest.id}`, monsterId: record.id } }
   };
 }

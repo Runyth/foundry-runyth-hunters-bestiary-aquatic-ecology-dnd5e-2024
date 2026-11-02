@@ -49,7 +49,7 @@ test("every Actor uses the 2024 marker and hostile unlinked token", () => {
     const actor = buildActorData(record);
     assert.equal(actor.type, "npc"); assert.equal(actor.system.details.source.rules, "2024");
     assert.equal(actor.prototypeToken.actorLink, false); assert.equal(actor.prototypeToken.disposition, -1);
-    assert.equal(actor.ownership.default, 0); assert.equal(actor.flags["hunters-bestiary-aquatic-ecology-dnd5e-2024"].managedKey, record.managedKey);
+    assert.equal(actor.ownership.default, 0); assert.equal(actor.flags["runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024"].managedKey, record.managedKey);
   }
 });
 test("Actor builder converts ecology size names to D&D 5e 5.3.3 size keys and token dimensions", () => {
@@ -84,7 +84,7 @@ test("Import missing Actors creates all twelve records under the D&D 5e pre-crea
     actors,
     items: [],
     folders,
-    settings: { get: () => "Hunter's Bestiary — Aquatic Actors" }
+    settings: { get: () => "Runyth Hunter's Bestiary — Aquatic Actors" }
   };
   globalThis.Folder = {
     async create(source) {
@@ -129,7 +129,7 @@ test("Import missing Actors creates all twelve records under the D&D 5e pre-crea
 test("Import missing Actors resumes safely after the two-Actor partial state", async () => {
   const previous = { game: globalThis.game, Actor: globalThis.Actor, Folder: globalThis.Folder, CONFIG: globalThis.CONFIG };
   const actorSizes = { tiny: { token: 0.5 }, sm: { token: 1 }, med: { token: 1 }, lg: { token: 2 }, huge: { token: 3 }, grg: { token: 4 } };
-  const folders = [{ id: "aquatic-actor-folder", name: "Hunter's Bestiary — Aquatic Actors", type: "Actor", folder: null }];
+  const folders = [{ id: "aquatic-actor-folder", name: "Runyth Hunter's Bestiary — Aquatic Actors", type: "Actor", folder: null }];
   const actors = data.statblocks.slice(0, 2).map((record, index) => {
     const source = buildActorData(record);
     return { ...source, id: `existing-${index + 1}`, items: source.items, getFlag(moduleId, key) { return this.flags?.[moduleId]?.[key]; } };
@@ -137,7 +137,7 @@ test("Import missing Actors resumes safely after the two-Actor partial state", a
   globalThis.CONFIG = { DND5E: { actorSizes } };
   globalThis.game = {
     user: { isGM: true }, i18n: { lang: "en", localize: (key) => key }, actors, items: [], folders,
-    settings: { get: () => "Hunter's Bestiary — Aquatic Actors" }
+    settings: { get: () => "Runyth Hunter's Bestiary — Aquatic Actors" }
   };
   globalThis.Folder = { async create() { throw new Error("Existing Actor folder should be reused."); } };
   globalThis.Actor = {
@@ -154,7 +154,7 @@ test("Import missing Actors resumes safely after the two-Actor partial state", a
     assert.equal(results.filter((entry) => entry.operation === "skipped").length, 2);
     assert.equal(results.filter((entry) => entry.operation === "imported").length, 10);
     assert.equal(actors.length, 12);
-    assert.equal(new Set(actors.map((actor) => actor.getFlag("hunters-bestiary-aquatic-ecology-dnd5e-2024", "monsterId"))).size, 12);
+    assert.equal(new Set(actors.map((actor) => actor.getFlag("runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024", "monsterId"))).size, 12);
   } finally {
     globalThis.game = previous.game; globalThis.Actor = previous.Actor; globalThis.Folder = previous.Folder; globalThis.CONFIG = previous.CONFIG;
   }
@@ -171,7 +171,7 @@ test("Actor import continues after an individual failure and reports every resul
     actors,
     items: [],
     folders,
-    settings: { get: () => "Hunter's Bestiary — Aquatic Actors" }
+    settings: { get: () => "Runyth Hunter's Bestiary — Aquatic Actors" }
   };
   globalThis.Folder = {
     async create(source) {
@@ -254,8 +254,8 @@ test("incomplete stat blocks fail with exact issue paths", () => {
 });
 test("all provider-managed embedded Items carry both provenance flag namespaces", () => {
   for (const record of data.statblocks) for (const item of buildActorData(record).items) {
-    assert.equal(item.flags["hunters-bestiary-aquatic-ecology-dnd5e-2024"].managed, true);
-    assert.equal(item.flags["hunters-bestiary"].providerId, "hunters-bestiary-aquatic-ecology-dnd5e-2024");
+    assert.equal(item.flags["runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024"].managed, true);
+    assert.equal(item.flags["runyth-hunters-bestiary"].providerId, "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024");
   }
 });
 test("harvest data carries preservation, risk, law, and source species", () => {
@@ -267,10 +267,10 @@ test("harvest data carries preservation, risk, law, and source species", () => {
 
 test("managed Actor refresh preserves identity, folder, ownership, notes, unrelated flags, custom Items, and effects", () => {
   const record = data.statblocks[0]; const source = buildActorData(record);
-  const actor = { id: "actor-identity", name: "Campaign Name", folder: { id: "folder-1" }, ownership: { default: 2 }, flags: { campaign: { notes: "keep" }, "hunters-bestiary": { campaignNote: "keep" } }, items: [{ id: "custom", getFlag: () => false }], effects: [{ id: "custom-effect" }] };
+  const actor = { id: "actor-identity", name: "Campaign Name", folder: { id: "folder-1" }, ownership: { default: 2 }, flags: { campaign: { notes: "keep" }, "runyth-hunters-bestiary": { campaignNote: "keep" } }, items: [{ id: "custom", getFlag: () => false }], effects: [{ id: "custom-effect" }] };
   const update = buildManagedActorUpdate(actor, source);
   assert.equal(update.name, undefined); assert.equal(update.folder, undefined); assert.equal(update.ownership, undefined); assert.equal(update.flags, undefined);
-  assert.equal(update["flags.hunters-bestiary"].campaignNote, "keep");
+  assert.equal(update["flags.runyth-hunters-bestiary"].campaignNote, "keep");
   assert.equal(actor.items.length, 1); assert.equal(actor.effects.length, 1); assert.equal(managedItem(actor.items[0]), false);
 });
 
@@ -293,7 +293,7 @@ test("D&D manifest paths, exact dependencies, localization, and imports resolve"
   const root = new URL("../", import.meta.url); const manifest = JSON.parse(fs.readFileSync(new URL("module.json", root)));
   for (const file of [...manifest.esmodules, ...manifest.styles, ...manifest.languages.map((x)=>x.path)]) assert.equal(fs.existsSync(new URL(file, root)), true, file);
   const req = new Map(manifest.relationships.requires.map((x)=>[x.id,x.compatibility.minimum]));
-  assert.equal(req.get("hunters-bestiary"),"1.4.2"); assert.equal(req.get("hunters-bestiary-dnd5e-2024"),"1.2.2"); assert.equal(req.get("hunters-bestiary-aquatic-ecology"),"1.2.4");
+  assert.equal(req.get("runyth-hunters-bestiary"),"1.4.2"); assert.equal(req.get("runyth-hunters-bestiary-dnd5e-2024"),"1.2.2"); assert.equal(req.get("runyth-hunters-bestiary-aquatic-ecology"),"1.2.4");
   const en=JSON.parse(fs.readFileSync(new URL("lang/en.json",root))); const de=JSON.parse(fs.readFileSync(new URL("lang/de.json",root))); assert.deepEqual(Object.keys(en).sort(),Object.keys(de).sort());
   for (const file of ["scripts/main.mjs","scripts/api.mjs","scripts/registry.mjs","scripts/provision.mjs","scripts/builder.mjs"]) { const source=fs.readFileSync(new URL(file,root),"utf8"); for(const match of source.matchAll(/(?:import|export)\s+(?:[^"']+?\s+from\s+)?["'](\.[^"']+)["']/g)) assert.equal(fs.existsSync(new URL(match[1],new URL(file,root))),true,`${file}: ${match[1]}`); }
 });
@@ -305,7 +305,7 @@ test("D&D API protects provisioning, source builders, encounter profiles, and da
 });
 
 test("D&D CSS is isolated", () => {
-  const css=fs.readFileSync(new URL("../styles/aquatic-dnd5e.css",import.meta.url),"utf8");
+  const css=fs.readFileSync(new URL("../styles/runyth-hunters-bestiary-aquatic-ecology.css",import.meta.url),"utf8");
   for(const selector of ["button","input",".window-header",".application",".tab",".sr-only"]) assert.equal(new RegExp(`(^|\\n)\\s*${selector.replace(".","\\.")}\\b`).test(css),false,selector);
 });
 
@@ -342,7 +342,7 @@ test("dashboard uses Import terminology and exposes confirmed deletion", () => {
 
 function mockDocument(name, flags, collection, folder = null) {
   const document = {
-    id: `${name}-id`, name, flags: { "hunters-bestiary-aquatic-ecology-dnd5e-2024": flags }, folder,
+    id: `${name}-id`, name, flags: { "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024": flags }, folder,
     getFlag(moduleId, key) { return this.flags[moduleId]?.[key]; },
     async delete() { const index = collection.indexOf(this); if (index >= 0) collection.splice(index, 1); this.deleted = true; }
   };
@@ -352,10 +352,10 @@ function mockDocument(name, flags, collection, folder = null) {
 
 test("import provenance predicates reject unrelated and other-provider documents", () => {
   const actors = [], items = [], folders = [];
-  const actor = mockDocument("managed actor", { managed: true, providerId: "hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:test", monsterId: "test" }, actors);
+  const actor = mockDocument("managed actor", { managed: true, providerId: "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:test", monsterId: "test" }, actors);
   const unrelatedActor = mockDocument("unrelated actor", { managed: true, providerId: "other-provider", managedKey: "aquatic:test", monsterId: "test" }, actors);
-  const item = mockDocument("managed item", { managed: true, providerId: "hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:test:harvest:x", monsterId: "test", harvestId: "x" }, items);
-  const folder = mockDocument("managed folder", { managed: true, providerId: "hunters-bestiary-aquatic-ecology-dnd5e-2024", kind: "actor-import-folder" }, folders);
+  const item = mockDocument("managed item", { managed: true, providerId: "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:test:harvest:x", monsterId: "test", harvestId: "x" }, items);
+  const folder = mockDocument("managed folder", { managed: true, providerId: "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024", kind: "actor-import-folder" }, folders);
   const userFolder = mockDocument("user folder", {}, folders);
   assert.equal(isImportedActor(actor), true); assert.equal(isImportedActor(unrelatedActor), false);
   assert.equal(isImportedHarvestItem(item), true); assert.equal(isImportedFolder(folder), true); assert.equal(isImportedFolder(userFolder), false);
@@ -366,12 +366,12 @@ test("import provenance predicates reject unrelated and other-provider documents
 test("deleteImportedData removes only exact imported documents and empty module-created folders", async () => {
   const previousGame = globalThis.game;
   const actors = [], items = [], folders = [];
-  const importedActor = mockDocument("imported actor", { managed: true, providerId: "hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:test", monsterId: "test" }, actors);
+  const importedActor = mockDocument("imported actor", { managed: true, providerId: "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:test", monsterId: "test" }, actors);
   const unrelatedActor = mockDocument("unrelated actor", { managed: true, providerId: "another-provider", managedKey: "x", monsterId: "x" }, actors);
-  const importedItem = mockDocument("imported item", { managed: true, providerId: "hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:test:harvest:x", monsterId: "test", harvestId: "x" }, items);
+  const importedItem = mockDocument("imported item", { managed: true, providerId: "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:test:harvest:x", monsterId: "test", harvestId: "x" }, items);
   const unrelatedItem = mockDocument("unrelated item", {}, items);
-  const emptyManagedFolder = mockDocument("empty managed folder", { managed: true, providerId: "hunters-bestiary-aquatic-ecology-dnd5e-2024", kind: "actor-import-folder" }, folders);
-  const nonEmptyManagedFolder = mockDocument("non-empty managed folder", { managed: true, providerId: "hunters-bestiary-aquatic-ecology-dnd5e-2024", kind: "item-import-folder" }, folders);
+  const emptyManagedFolder = mockDocument("empty managed folder", { managed: true, providerId: "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024", kind: "actor-import-folder" }, folders);
+  const nonEmptyManagedFolder = mockDocument("non-empty managed folder", { managed: true, providerId: "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024", kind: "item-import-folder" }, folders);
   unrelatedItem.folder = nonEmptyManagedFolder;
   const userFolder = mockDocument("user folder", {}, folders);
   globalThis.game = { user: { isGM: true }, i18n: { localize: (key) => key }, actors, items, folders };
@@ -385,9 +385,9 @@ test("deleteImportedData removes only exact imported documents and empty module-
 test("deleteImportedData retains failures while continuing other deletions", async () => {
   const previousGame = globalThis.game;
   const actors = [], items = [], folders = [];
-  const failingActor = mockDocument("failing actor", { managed: true, providerId: "hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:fail", monsterId: "fail" }, actors);
+  const failingActor = mockDocument("failing actor", { managed: true, providerId: "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:fail", monsterId: "fail" }, actors);
   failingActor.delete = async () => { throw new Error("actor delete failed"); };
-  const successfulItem = mockDocument("successful item", { managed: true, providerId: "hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:ok:harvest:x", monsterId: "ok", harvestId: "x" }, items);
+  const successfulItem = mockDocument("successful item", { managed: true, providerId: "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024", managedKey: "aquatic:ok:harvest:x", monsterId: "ok", harvestId: "x" }, items);
   globalThis.game = { user: { isGM: true }, i18n: { localize: key => key }, actors, items, folders };
   const progress = [];
   try {

@@ -1,4 +1,4 @@
-# Patch qualification — Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.1
+# Patch qualification — Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.1
 
 - Automated tests: 33/33 passed.
 - English/German localization parity: 87/87 keys.

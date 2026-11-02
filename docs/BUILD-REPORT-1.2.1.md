@@ -1,10 +1,10 @@
-# Build report — Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.1
+# Build report — Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.1
 
 ## Inputs
 
 - Authoritative baseline: previous accepted reproducible source ZIP.
 - Patch date: 2026-07-31.
-- Stable technical module ID: `hunters-bestiary-aquatic-ecology-dnd5e-2024`.
+- Stable technical module ID: `runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024`.
 
 ## Qualification
 

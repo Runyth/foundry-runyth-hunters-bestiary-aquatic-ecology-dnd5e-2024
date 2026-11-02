@@ -1,4 +1,4 @@
-# Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.3.2
+# Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.3.2
 
 Patch release focused on responsiveness, reduced document and DOM work, safe asynchronous concurrency, and Foundry-specific batching. No gameplay rules, stable IDs, localization keys, public APIs, or user data formats were intentionally changed.
 
@@ -14,4 +14,4 @@ Patch release focused on responsiveness, reduced document and DOM work, safe asy
 
 ## Compatibility
 
-Install Hunter's Bestiary 1.4.2, the D&D integration 1.2.2, and Aquatic Ecology 1.2.2 first. Existing Actors, Items, folders, registry entries, and research content remain valid.
+Install Runyth Hunter's Bestiary 1.4.2, the D&D integration 1.2.2, and Aquatic Ecology 1.2.2 first. Existing Actors, Items, folders, registry entries, and research content remain valid.

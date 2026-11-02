@@ -1,6 +1,6 @@
 # Build Report 1.3.5
 
-Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.3.5 hardens stat-block package validation against null and malformed entries and consumes the corrected Aquatic Ecology 1.2.4 species visibility contract.
+Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.3.5 hardens stat-block package validation against null and malformed entries and consumes the corrected Aquatic Ecology 1.2.4 species visibility contract.
 
 Qualification:
 - 62/62 automated tests pass.

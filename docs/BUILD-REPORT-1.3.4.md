@@ -1,6 +1,6 @@
 # Build Report 1.3.4
 
-Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.3.4 was built from the complete source tree with deterministic ZIP timestamps and ordering.
+Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.3.4 was built from the complete source tree with deterministic ZIP timestamps and ordering.
 
 Qualification before packaging:
 

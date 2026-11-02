@@ -48,7 +48,7 @@ function managedActor(record) {
 }
 
 export function managedItem(item) { return flag(item, "managed") === true && flag(item, "providerId") === PROVIDER_ID; }
-export function buildManagedActorUpdate(actor, source) { return { img: source.img, system: source.system, prototypeToken: source.prototypeToken, [`flags.${MODULE_ID}`]: source.flags[MODULE_ID], "flags.hunters-bestiary": { ...(actor.flags?.["hunters-bestiary"] ?? {}), ...source.flags["hunters-bestiary"] } }; }
+export function buildManagedActorUpdate(actor, source) { return { img: source.img, system: source.system, prototypeToken: source.prototypeToken, [`flags.${MODULE_ID}`]: source.flags[MODULE_ID], "flags.runyth-hunters-bestiary": { ...(actor.flags?.["runyth-hunters-bestiary"] ?? {}), ...source.flags["runyth-hunters-bestiary"] } }; }
 
 export async function provisionActors({ update = false, monsterIds, onProgress } = {}) {
   requireGm();
@@ -154,7 +154,7 @@ export async function createHarvestItems({ monsterIds, onProgress } = {}) {
           img: entry.source.img,
           system: entry.source.system,
           [`flags.${MODULE_ID}`]: entry.source.flags[MODULE_ID],
-          "flags.hunters-bestiary": { ...(item.flags?.["hunters-bestiary"] ?? {}), ...entry.source.flags["hunters-bestiary"] }
+          "flags.runyth-hunters-bestiary": { ...(item.flags?.["runyth-hunters-bestiary"] ?? {}), ...entry.source.flags["runyth-hunters-bestiary"] }
         }, { render: false });
         operation = "updated";
       }

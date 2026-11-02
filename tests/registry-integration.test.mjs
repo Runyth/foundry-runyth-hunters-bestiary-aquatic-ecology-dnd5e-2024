@@ -56,8 +56,8 @@ function installRuntime(baseApi) {
     user: { isGM: true },
     i18n: { lang: "en", localize: key => key },
     modules: new Map([
-      ["hunters-bestiary-dnd5e-2024", { api: baseApi }],
-      ["hunters-bestiary-aquatic-ecology", { api: { whenReady: async () => undefined, getSpecies: () => clone(ecology) } }]
+      ["runyth-hunters-bestiary-dnd5e-2024", { api: baseApi }],
+      ["runyth-hunters-bestiary-aquatic-ecology", { api: { whenReady: async () => undefined, getSpecies: () => clone(ecology) } }]
     ])
   };
   return () => {

@@ -1,4 +1,4 @@
-# Compatibility Report - Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.0
+# Compatibility Report - Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.0
 
 ## Supported environment
 
@@ -11,9 +11,9 @@ No live Foundry client was launched in the build environment. Compatibility clai
 
 ## Declared dependencies
 
-- Hunter's Bestiary 1.3.0+
-- Hunter's Bestiary - D&D 5e 2024 1.1.0+
-- Hunter's Bestiary: Aquatic Ecology 1.1.0+
+- Runyth Hunter's Bestiary 1.3.0+
+- Runyth Hunter's Bestiary - D&D 5e 2024 1.1.0+
+- Runyth Hunter's Bestiary: Aquatic Ecology 1.1.0+
 - D&D Fifth Edition 5.3.3
 - Foundry VTT 13
 

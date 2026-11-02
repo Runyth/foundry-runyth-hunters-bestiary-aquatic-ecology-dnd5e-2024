@@ -1,4 +1,4 @@
-# Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.1.0
+# Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.1.0
 
 This feature release fixes the Actor import crash, adopts Import terminology, and adds safe removal of all module-imported world data.
 

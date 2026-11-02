@@ -1,5 +1,5 @@
 
-> hunters-bestiary-aquatic-ecology-dnd5e-2024@1.3.1 test
+> runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024@1.3.1 test
 > node --test tests/*.test.mjs
 
 TAP version 13
@@ -243,8 +243,8 @@ ok 40 - Actor portrait and prototype token use the same record image
   duration_ms: 3.48109
   type: 'test'
   ...
-# Subtest: dashboard delegates image changes to Hunter's Bestiary core
-ok 41 - dashboard delegates image changes to Hunter's Bestiary core
+# Subtest: dashboard delegates image changes to Runyth Hunter's Bestiary core
+ok 41 - dashboard delegates image changes to Runyth Hunter's Bestiary core
   ---
   duration_ms: 2.596153
   type: 'test'
@@ -343,7 +343,7 @@ ok 52 - aquatic dashboard delegates failure detection to the shared explicit con
 
 
 
-> hunters-bestiary-aquatic-ecology-dnd5e-2024@1.3.1 check
+> runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024@1.3.1 check
 > node tools/validate.mjs
 
 Aquatic D&D validation passed: 12 stat blocks, 27 actions, 36 harvest Items.

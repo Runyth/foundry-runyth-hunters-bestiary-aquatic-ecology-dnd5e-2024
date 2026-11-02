@@ -10,7 +10,7 @@ const manifest = readJson(root, "module.json"); const packageJson = readJson(roo
 const en = readJson(root, "lang/en.json"); const de = readJson(root, "lang/de.json"); const errors = [];
 for (const file of [...manifest.esmodules,...manifest.styles,...manifest.languages.map((entry)=>entry.path)]) if (!fs.existsSync(path.join(root,file))) errors.push(`Missing referenced file ${file}`);
 const requirements = new Map(manifest.relationships.requires.map((entry)=>[entry.id,entry.compatibility?.minimum]));
-for (const [id,version] of [["hunters-bestiary","1.4.2"],["hunters-bestiary-dnd5e-2024","1.2.2"],["hunters-bestiary-aquatic-ecology","1.2.4"]]) if (requirements.get(id)!==version) errors.push(`Dependency ${id} minimum must be ${version}.`);
+for (const [id,version] of [["runyth-hunters-bestiary","1.4.2"],["runyth-hunters-bestiary-dnd5e-2024","1.2.2"],["runyth-hunters-bestiary-aquatic-ecology","1.2.4"]]) if (requirements.get(id)!==version) errors.push(`Dependency ${id} minimum must be ${version}.`);
 if (manifest.relationships.systems[0].compatibility.minimum !== "5.3.3") errors.push("D&D minimum must be 5.3.3.");
 const report = validateStatblockPackage(data, ecology); if (!report.valid) errors.push(...report.issues.map((entry)=>`${entry.code} ${entry.path}: ${entry.message}`));
 globalThis.game = { i18n: { lang: "en" } };
@@ -42,7 +42,7 @@ if (dashboardTemplate.includes("hbaedndCreateActors")) errors.push("Legacy Creat
 for (const method of ["importActors", "importHarvestItems", "deleteImportedData"]) if (!production.includes(method)) errors.push(`Missing public import lifecycle method ${method}.`);
 
 for (const forbidden of ["renderApplication","renderApplicationV2","renderChatMessage","window.addEventListener","renderActorSheet","renderItemSheet","renderTokenHUD","getSceneControlButtons"]) if (production.includes(forbidden)) errors.push(`D&D integration owns forbidden/broad hook or listener: ${forbidden}`);
-const css=fs.readFileSync(path.join(root,"styles/aquatic-dnd5e.css"),"utf8"); for (const line of css.split(/\r?\n/)) if (/^(button|input|\.window-header|\.application|\.tab|\.sr-only)\b/.test(line.trim())) errors.push(`Unscoped CSS selector: ${line.trim()}`);
+const css=fs.readFileSync(path.join(root,"styles/runyth-hunters-bestiary-aquatic-ecology.css"),"utf8"); for (const line of css.split(/\r?\n/)) if (/^(button|input|\.window-header|\.application|\.tab|\.sr-only)\b/.test(line.trim())) errors.push(`Unscoped CSS selector: ${line.trim()}`);
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
 console.log(`Aquatic D&D validation passed: ${report.counts.statblocks} stat blocks, ${report.counts.actions} actions, ${report.counts.harvestItems} harvest Items.`);
 console.log(`Localization parity: ${Object.keys(en).length} keys. Static scripts: ${scripts.length}.`);

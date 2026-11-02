@@ -1,4 +1,4 @@
-Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.1 automated validation
+Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.1 automated validation
 
 PASS: 33/33 Node test cases
 PASS: stat-block/package/static validation

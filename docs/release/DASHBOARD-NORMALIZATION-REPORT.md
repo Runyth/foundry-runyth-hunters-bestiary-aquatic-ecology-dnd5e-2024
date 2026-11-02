@@ -1,4 +1,4 @@
-# Dashboard Normalization Report - Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.0
+# Dashboard Normalization Report - Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.2.0
 
 - Foundry v13 ApplicationV2: retained/implemented.
 - Shared core dashboard toolkit: used for geometry, search, progress, busy state, reporting, reset controls, and naming validation.

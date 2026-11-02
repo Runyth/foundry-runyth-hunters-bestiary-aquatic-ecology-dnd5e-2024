@@ -44,7 +44,7 @@ export function registerSettings() {
     scope: "world",
     config: true,
     type: String,
-    default: "Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024: Actors",
+    default: "Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024: Actors",
     restricted: true
   });
   if (!settingExists(SETTINGS.ITEM_FOLDER)) game.settings.register(MODULE_ID, SETTINGS.ITEM_FOLDER, {
@@ -53,7 +53,7 @@ export function registerSettings() {
     scope: "world",
     config: true,
     type: String,
-    default: "Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024: Harvest Items",
+    default: "Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024: Harvest Items",
     restricted: true
   });
   if (!settingExists(SETTINGS.GEOMETRY)) game.settings.register(MODULE_ID, SETTINGS.GEOMETRY, { scope: "client", config: false, type: Object, default: {} });

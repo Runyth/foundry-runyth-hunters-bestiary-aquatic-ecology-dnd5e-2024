@@ -1,4 +1,4 @@
-# Manual Runtime Performance Acceptance — Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.3.2
+# Manual Runtime Performance Acceptance — Runyth Hunter's Bestiary: Aquatic Ecology - D&D 5e 2024 1.3.2
 
 1. Start Foundry VTT 13.351 with the coordinated module versions enabled.
 2. Open and close every dashboard repeatedly; confirm no delayed close or duplicate window appears.
