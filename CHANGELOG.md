@@ -1,12 +1,10 @@
-## 1.3.7 - 2026-11-03
+# Changelog
 
-### Fixed and improved
+## 1.3.7 — 2026-11-03
 
 - AGENTS.md conformance release: the manifest author carries the standard organisational URL, and the shipped homebrew content states its CC BY-SA 4.0 content licence in the README and on the content data records. No runtime behaviour relationship or dependency change.
 
 ## 1.3.6 — 2026-11-02
-
-### Fixed and improved
 
 - The licence-notices documentation now carries the adopted GNU AGPL-3.0-or-later statement next to the content-boundary text instead of the removed MIT stub. No runtime behaviour, relationship, or dependency change; the release moves a patch for the documentation-surface alignment.
 
@@ -52,8 +50,6 @@
 - Added future-language authoring documentation and regression coverage.
 - Preserved the coordinated actor-image feature set and all stable IDs and settings.
 
-# Changelog
-
 ## 1.3.0
 
 - Added clickable aquatic Actor images through the core FilePicker workflow.
@@ -76,7 +72,6 @@
 - Prevented success notifications and dashboard rerenders from obscuring a retained failure window.
 - Raised the Runyth Hunter's Bestiary dependency floor to 1.3.5 for the enhanced progress lifecycle.
 
-
 ## 1.2.3
 
 - Fixed the root localization failure that displayed every dashboard label as an internal `HBAEDND.*` key.
@@ -94,7 +89,7 @@
 - Fixed the dashboard foreground-focus race by waiting for ApplicationV2 rendering.
 - Coordinated dependency floors with the current core, core D&D, and Aquatic Ecology patches.
 
-## 1.2.1 - 2026-07-31
+## 1.2.1 — 2026-07-31
 
 - Fixed both Configure Settings dashboard launchers on Foundry v13 by removing unsupported minimum-size fields from ApplicationV2 position defaults.
 - Retained minimum dashboard geometry through the shared geometry configuration and viewport clamping.
@@ -105,7 +100,7 @@
 - Updated dependencies to Runyth Hunter's Bestiary - D&D 5e 2024 1.1.2 and Aquatic Ecology 1.1.1.
 - Added regression tests for valid ApplicationV2 options and human-readable settings text.
 
-## 1.2.0 - 2026-07-31
+## 1.2.0 — 2026-07-31
 
 - Normalized the canonical family title and coordinated dependency versions across all four official modules.
 - Added/consumed the core naming API with structured validation, registrations, startup warning deduplication, and dashboard-open warnings.
@@ -113,7 +108,6 @@
 - Preserved stable module IDs, existing settings and flags, imported content identities, provider IDs, and documented compatibility aliases.
 - Added complete English/German localization parity, developer guidance, migration documentation, tests, and release qualification artifacts.
 - Retained this module's ocean-blue d&d integration palette and module-specific functionality.
-
 
 ## 1.1.1 — 2026-07-31
 
