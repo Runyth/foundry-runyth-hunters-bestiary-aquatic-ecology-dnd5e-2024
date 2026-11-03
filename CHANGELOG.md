@@ -1,3 +1,9 @@
+## 1.3.7 - 2026-11-03
+
+### Fixed and improved
+
+- AGENTS.md conformance release: the manifest author carries the standard organisational URL, and the shipped homebrew content states its CC BY-SA 4.0 content licence in the README and on the content data records. No runtime behaviour relationship or dependency change.
+
 ## 1.3.6 — 2026-11-02
 
 ### Fixed and improved
