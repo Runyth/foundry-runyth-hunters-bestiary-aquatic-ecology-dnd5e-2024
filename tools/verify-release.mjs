@@ -11,7 +11,7 @@ import { build } from "./build.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const MODULE_ID = "runyth-hunters-bestiary-aquatic-ecology-dnd5e-2024";
-const VERSION = "1.3.6";
+const VERSION = "1.3.7";
 
 function fail(message) {
   process.stderr.write(`Verification failed: ${message}\n`);
