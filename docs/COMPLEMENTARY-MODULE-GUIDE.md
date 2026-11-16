@@ -381,4 +381,3 @@ Do not add broad `button`, `input`, `.window-content`, or ApplicationV2 selector
 - Core toolkit for geometry, stable search, progress, busy state, naming validation, resets, and destructive confirmation.
 - All twelve Actors, native D&D size keys, token dimensions, partial-world recovery, exact provenance deletion, user-content preservation, and compatibility aliases remain.
 - The ocean-blue D&D palette remains.
-

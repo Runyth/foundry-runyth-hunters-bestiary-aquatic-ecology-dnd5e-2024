@@ -1,41 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Aquatic Ecology D&D 5e 2024 Stat Blocks",
-  "type": "object",
-  "required": [
-    "schemaVersion",
-    "system",
-    "statblocks"
-  ],
+  "additionalProperties": true,
   "properties": {
     "schemaVersion": {
       "const": 1
     },
-    "system": {
-      "type": "object",
-      "required": [
-        "id",
-        "minimum",
-        "rules"
-      ],
-      "properties": {
-        "id": {
-          "const": "dnd5e"
-        },
-        "minimum": {
-          "const": "5.3.3"
-        },
-        "rules": {
-          "const": "2024"
-        }
-      }
-    },
     "statblocks": {
-      "type": "array",
-      "minItems": 12,
-      "maxItems": 12,
       "items": {
-        "type": "object",
         "required": [
           "id",
           "name",
@@ -55,9 +26,38 @@
           "harvestItems",
           "encounter",
           "managedKey"
-        ]
-      }
+        ],
+        "type": "object"
+      },
+      "maxItems": 12,
+      "minItems": 12,
+      "type": "array"
+    },
+    "system": {
+      "properties": {
+        "id": {
+          "const": "dnd5e"
+        },
+        "minimum": {
+          "const": "5.3.3"
+        },
+        "rules": {
+          "const": "2024"
+        }
+      },
+      "required": [
+        "id",
+        "minimum",
+        "rules"
+      ],
+      "type": "object"
     }
   },
-  "additionalProperties": true
+  "required": [
+    "schemaVersion",
+    "system",
+    "statblocks"
+  ],
+  "title": "Aquatic Ecology D&D 5e 2024 Stat Blocks",
+  "type": "object"
 }

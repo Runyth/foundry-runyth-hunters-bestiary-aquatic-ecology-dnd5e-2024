@@ -13,4 +13,3 @@
 10. Test startup with all modules, each supported subset, a disabled complementary module, a missing dependency, an incompatible API declaration, and valid/invalid third-party naming metadata.
 11. Confirm one invalid-name warning at startup and one per intentional dashboard open, with no rerender loop.
 12. Verify English and German UI paths and keyboard-only operation.
-

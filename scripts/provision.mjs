@@ -284,4 +284,3 @@ export async function deleteImportedData({ onProgress, removeEmptyFolders = true
   }
   return report;
 }
-

@@ -203,4 +203,3 @@ Do not add broad `button`, `input`, `.window-content`, or ApplicationV2 selector
 - [ ] Repeated builds are byte-identical.
 - [ ] Source ZIP reproduces the install ZIP.
 - [ ] Live Foundry smoke plan completed or explicitly reported as unavailable.
-
